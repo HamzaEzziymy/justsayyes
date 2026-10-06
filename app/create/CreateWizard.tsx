@@ -3,6 +3,7 @@
 import { useState, useTransition } from "react";
 import { createInvitation } from "./actions";
 import { ACTIVITIES, THEMES } from "@/lib/validations/invitation";
+import { AdBanner } from "@/components/ads/AdBanner";
 
 const THEME_LABEL = { cute: "Cute 🥺", romantic: "Romantic ❤️", funny: "Funny 😂", crazy: "Crazy 😈", simple: "Simple ✨" } as const;
 const field = "mt-1 h-12 w-full rounded-2xl border bg-white px-4";
@@ -37,6 +38,8 @@ export function CreateWizard() {
         <a className="flex h-12 items-center justify-center rounded-full border font-semibold" target="_blank" rel="noopener noreferrer" href={`https://wa.me/?text=${encodeURIComponent(shareText)}`}>WhatsApp</a>
         <button className="h-12 rounded-full border font-semibold" onClick={() => (navigator.share ? navigator.share({ text: shareText, url: link }) : navigator.clipboard.writeText(shareText))}>Share</button>
       </div>
+      {/* Adsterra banner */}
+      <AdBanner className="mt-4" />
     </main>
   );
 

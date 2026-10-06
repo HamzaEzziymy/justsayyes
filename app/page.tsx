@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AdBanner } from "@/components/ads/AdBanner";
 
 const faq = [
   ["What is JustSayYes?", "A playful way to ask someone out: you send a link, they meet a NO button that runs away."],
@@ -26,6 +27,9 @@ export default function Home() {
           <p className="mt-4 text-sm text-neutral-500">Good luck clicking NO 😂</p>
         </div>
       </section>
+      {/* Adsterra banner */}
+      <AdBanner className="mt-12" />
+
       <section id="how" className="mt-20">
         <h2 className="text-2xl font-bold">How it works</h2>
         <ol className="mt-4 list-decimal space-y-2 pl-6">

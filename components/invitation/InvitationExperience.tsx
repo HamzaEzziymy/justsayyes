@@ -6,6 +6,7 @@ import { EscapingNoButton } from "./EscapingNoButton";
 import { NO_GIVE_UP } from "./messages";
 import { ACTIVITIES } from "@/lib/validations/invitation";
 import { track, submitDate } from "./actions";
+import { AdBanner } from "@/components/ads/AdBanner";
 
 const ACTIVITY_LABEL: Record<(typeof ACTIVITIES)[number], string> = {
   coffee: "☕ Coffee", pizza: "🍕 Pizza", cinema: "🎬 Cinema", sunset: "🌅 Sunset Walk",
@@ -104,6 +105,8 @@ export function InvitationExperience({ slug, senderName, recipientName, message 
             <p>{new Date(date + "T00:00").toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" })} · {time}</p>
             <p>{ACTIVITY_LABEL[activity]}</p>
             <a href="/create" className="inline-block rounded-full bg-rose-500 px-6 py-3 font-semibold text-white">Create Your Own ❤️</a>
+            {/* Adsterra banner */}
+            <AdBanner className="mt-4" />
           </motion.section>
         )}
       </AnimatePresence>
